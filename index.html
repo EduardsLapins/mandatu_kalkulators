@@ -99,14 +99,17 @@ input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;bac
 .bar div{height:100%;border-radius:3px}
 @media (min-width:560px){.drow{grid-template-columns:14px 40px 120px 46px 40px 1fr}.bar{grid-column:auto;margin-top:0}}
 
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{padding:7px 6px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
-th{font-weight:500;color:var(--ink-2);font-size:12px}
+.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -14px;padding:0 14px}
+table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
+th,td{padding:7px 4px;border-bottom:1px solid var(--line);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+th{font-weight:500;color:var(--ink-2);font-size:12px;line-height:1.2;white-space:normal;vertical-align:bottom}
 th:first-child,td:first-child{text-align:left}
 td.num{font-family:var(--mono)}
 td.up{color:var(--ok)} td.dn{color:var(--accent)}
 tr.meta td{color:var(--ink-2);border-bottom:0}
+tr.meta td:first-child{white-space:normal}
 tr.meta+tr.meta td{padding-top:0}
+@media (max-width:400px){table{font-size:12px}td.num{font-size:12px}}
 .src{font-size:12px;color:var(--ink-3);margin:10px 0 0}
 .src a{color:inherit}
 dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:13px}
@@ -188,10 +191,13 @@ footer p{margin:0 0 8px}
   <section class="card" aria-labelledby="h-apt">
     <h2 id="h-apt">SKDS augusta aptauja</h2>
     <p class="hint">Aptauja veikta 13.–19. augustā, 1205 respondenti. Pirmā aile – visi balsstiesīgie; otrā – tikai izlēmušie, ņemot vērā gatavību piedalīties (tos pašus skaitļus ielādē scenārijs «SKDS augusta aptauja»).</p>
-    <table id="poll">
-      <thead><tr><th>Partija</th><th>Visi, %</th><th>pret jūliju</th><th>Izlēmušie, %</th></tr></thead>
-      <tbody></tbody>
-    </table>
+    <div class="tablewrap">
+      <table id="poll">
+        <colgroup><col style="width:34%"><col style="width:22%"><col style="width:22%"><col style="width:22%"></colgroup>
+        <thead><tr><th>Partija</th><th>Visi, %</th><th>pret jūliju</th><th>Izlēmušie, %</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </div>
     <div class="actions">
       <button type="button" id="loadpoll">Izmantot aptaujas skaitļus</button>
     </div>
