@@ -381,7 +381,7 @@ function render(){
  const band=pmin>0.3?"v1":pmin>0.05?"v2":"v3";
  const pvEl=$("m-pv");pvEl.className="n "+band;pvEl.textContent=zmax<0.05?"100 %":fmtP(pmin);
  const pb=$("m-pvbar");pb.className=band;pb.style.width=Math.max(1.5,(zmax<0.05?1:pmin)*100).toFixed(1)+"%";
- $("m-pvsub").textContent=zmax<0.05?"Visas partijas prognozes centrā.":`Nosaka ${P[bi][0]}: ${fmt(MU[bi])} → ${fmt(norm[bi])}. Šāda vai lielāka novirze – ${fmtP(pmin)} gadījumu.`;
+ $("m-pvsub").textContent=zmax<0.05?"Visas partijas prognozes centrā.":`Nosaka ${P[bi][0]}: ${fmt(MU[bi])} → ${fmt(norm[bi])}. Šāda vai mazāka novirze – ${fmtP(pmin)} gadījumu.`;
  $("m-cfg").textContent=fmtP(pc);
  const outb=[];z.forEach((v,i)=>{if(Math.abs(v)>=1)outb.push(P[i][0]+" "+(v>0?"+":"−")+fmt(Math.abs(v))+"σ");});
  $("m-big").textContent=outb.length;
