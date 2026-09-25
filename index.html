@@ -2,220 +2,256 @@
 <html lang="lv">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
-<title>Saeimas mandātu kalkulators · 2026</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Saeima 2026</title>
+<meta name="color-scheme" content="light only">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;500;600&family=Newsreader:opsz,wght@6..72,500;6..72,600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#EFE8DA; --card:#FBF8F1; --ink:#26221D; --ink-2:#5F584E; --ink-3:#736B5E;
-  --line:#E1D9C9; --line-2:#CBC2B0; --accent:#973434; --accent-soft:#F2E0DA;
-  --ok:#4F6B2F; --ok-soft:#E6EAD6; --track:#E0D8C7; --brass:#87631E;
-  --sans:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
-  --serif:"IBM Plex Serif",Georgia,"Times New Roman",serif;
-  --mono:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --bg:#EFE8DA; --surface:#FBF8F1; --ink:#26221D; --ink-2:#5F584E; --ink-3:#736B5E;
+  --line:#E1D9C9; --line-2:#CBC2B0; --track:#E0D8C7;
+  --accent:#973434; --accent-soft:#F2E0DA; --ok:#4F6B2F; --ok-soft:#E6EAD6; --gold:#87631E;
+  --tip-bg:#26221D; --tip-ink:#F7F1E4; --shadow:0 1px 2px rgba(38,34,29,.06),0 8px 24px rgba(38,34,29,.08);
+  --sans:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --r:14px;
 }
+html{color-scheme:light only}
 *{box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.5;font-variant-numeric:tabular-nums}
-.wrap{max-width:720px;margin:0 auto;padding:0 16px}
-header.top{padding:28px 0 8px}
-.eyebrow{margin:0 0 6px;font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-2)}
-h1{margin:0 0 6px;font-family:var(--serif);font-weight:600;font-size:30px;line-height:1.15;letter-spacing:-.01em}
-.lede{margin:0;color:var(--ink-2);max-width:56ch}
-h2{margin:0 0 10px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--ink-2)}
-section{margin:24px 0}
-.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px}
-.hint{margin:0 0 10px;font-size:13px;color:var(--ink-3)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:15px;line-height:1.45;font-variant-numeric:tabular-nums}
+.wrap{max-width:720px;margin:0 auto;padding-inline:20px}
+main.wrap{display:flex;flex-direction:column;gap:44px;padding-block:28px 56px}
 
-.sticky{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line);padding:8px 0}
-.sticky .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px}
-.sticky .k{font-family:var(--mono);font-size:13px;color:var(--ink-2)}
-.sticky .v{font-family:var(--serif);font-size:20px;font-weight:600}
-.pill{display:inline-block;padding:3px 10px;border-radius:999px;font-size:13px;font-weight:500}
+/* header */
+header.top{padding-block:30px 6px}
+header.top .wrap{display:flex;align-items:flex-end;justify-content:space-between;gap:16px}
+.eyebrow{margin:0 0 4px;font-family:var(--mono);font-size:12px;letter-spacing:.04em;color:var(--ink-3)}
+h1{margin:0;font-family:var(--serif);font-weight:500;font-size:34px;line-height:1.05;letter-spacing:-.01em;text-wrap:balance}
+.info{display:inline-flex;align-items:center;justify-content:center;width:22px;height:22px;border-radius:50%;border:1px solid var(--line-2);color:var(--ink-2);font-family:var(--serif);font-size:14px;font-style:italic;cursor:help;flex:none;vertical-align:middle;background:transparent}
+.info:hover,.info:focus-visible{border-color:var(--ink);color:var(--ink)}
+
+/* section heads */
+.sh{display:flex;align-items:center;gap:10px;margin:0 0 14px}
+h2{margin:0;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.sh .sp{flex:1}
+.cap{margin:-6px 0 14px;font-size:13px;color:var(--ink-3)}
+.cap b{font-weight:500;color:var(--ink-2)}
+.legend{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:12px;color:var(--ink-3);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{display:inline-block;width:14px;height:8px;border-radius:4px;background:var(--track)}
+.legend i.tick{width:2px;height:12px;border-radius:1px;background:var(--gold)}
+.legend i.ring{width:10px;height:10px;border-radius:50%;background:var(--surface);box-shadow:0 0 0 2px var(--accent)}
+
+/* sticky bar */
+.sticky{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.sticky .wrap{display:flex;align-items:center;gap:14px;padding-block:9px}
+.sticky .v{font-family:var(--serif);font-size:22px;font-weight:500;min-width:3ch;line-height:1}
+.sticky .v small{font-family:var(--mono);font-size:12px;color:var(--ink-3);font-weight:400}
+.mini{flex:1;height:4px;border-radius:2px;background:var(--track);position:relative;overflow:visible}
+.mini i{position:absolute;left:0;top:0;height:100%;border-radius:2px;background:var(--accent);transition:width .3s ease}
+.mini i.ok{background:var(--ok)}
+.mini b{position:absolute;left:51%;top:-4px;width:2px;height:12px;background:var(--gold);border-radius:1px}
+.pill{display:inline-block;padding:4px 11px;border-radius:999px;font-size:13px;font-weight:500;white-space:nowrap}
 .pill.ok{background:var(--ok-soft);color:var(--ok)}
 .pill.no{background:var(--accent-soft);color:var(--accent)}
-.pill.none{background:var(--bg);color:var(--ink-3)}
+.pill.none{background:var(--track);color:var(--ink-3)}
 
-button{font:inherit;color:var(--ink);background:var(--card);border:1px solid var(--line-2);border-radius:999px;padding:9px 14px;min-height:40px;cursor:pointer;text-align:left;transition:background .12s}
-#presets button{white-space:normal;line-height:1.25}
-button:hover{background:var(--bg)}
-button:focus-visible,input:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
-button.sel{background:var(--ink);color:var(--card);border-color:var(--brass)}
-button .pct{font-family:var(--mono);font-size:12px;opacity:.75;margin-left:4px}
+/* buttons */
+button{font:inherit;color:var(--ink);background:var(--surface);border:1px solid var(--line-2);border-radius:999px;padding:8px 14px;min-height:40px;cursor:pointer;transition:background .12s,border-color .12s,color .12s}
+button:hover{border-color:var(--ink-2)}
+button:focus-visible,input:focus-visible{outline:2px solid var(--ink);outline-offset:2px}
+button.sel{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+button.ghost{background:transparent;border-color:transparent;color:var(--ink-2);padding-inline:10px}
+button.ghost:hover{color:var(--ink);background:var(--track);border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{display:inline-flex;align-items:center;gap:8px}
+.chip .pct{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+button.sel .pct{color:inherit;opacity:.7}
+.chip.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.chip.out{color:var(--ink-3)}
+.chip.on.out{color:var(--bg);opacity:.6}
+.chip .s{font-family:var(--mono);font-size:12px;opacity:.7}
+.sw{width:10px;height:10px;border-radius:3px;display:inline-block;flex:none}
+.actions{display:flex;gap:6px;align-items:center;margin-top:12px}
+.toast{font-size:13px;color:var(--ok);opacity:0;transition:opacity .2s}
+.toast.show{opacity:1}
 
-.hero{padding:10px 8px 14px}
-.hero svg{display:block;width:100%;max-width:520px;margin:0 auto}
+/* hero */
+.hero{background:var(--surface);border-radius:var(--r);box-shadow:var(--shadow);padding:22px 20px 18px}
+.hero svg{display:block;width:100%;max-width:500px;margin:0 auto}
+.hero svg circle{cursor:default;transition:opacity .2s}
 .arcfill{transition:stroke-dasharray .35s ease}
-@media (prefers-reduced-motion:reduce){.arcfill{transition:none}}
-.stats{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:16px;border-top:1px solid var(--line);padding-top:14px}
 @media (min-width:560px){.stats{grid-template-columns:repeat(4,1fr)}}
-.stat{padding:10px 12px;border-radius:10px;background:var(--bg)}
-.stat .l{font-size:12px;color:var(--ink-2);margin:0 0 2px}
-.stat .n{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.1;margin:0}
+.stat{padding:4px 12px 6px;border-left:1px solid var(--line)}
+.stat:first-child{border-left:0;padding-left:0}
+@media (max-width:559px){.stat:nth-child(3){border-left:0;padding-left:0}.stat:nth-child(n+3){margin-top:10px}}
+.stat .l{font-size:12px;color:var(--ink-3);margin:0 0 2px;cursor:help}
+.stat .n{font-family:var(--serif);font-size:28px;font-weight:500;line-height:1.05;margin:0}
 .stat .n.ok{color:var(--ok)} .stat .n.no{color:var(--accent)} .stat .n.none{color:var(--ink-3)}
 
-.chips{display:flex;flex-wrap:wrap;gap:8px}
-.chip{display:inline-flex;align-items:center;gap:7px;padding:8px 12px}
-.chip.on{background:var(--ink);color:var(--card);border-color:var(--ink)}
-.chip.out{color:var(--ink-3)}
-.chip.on.out{color:var(--card);opacity:.7}
-.chip .s{font-family:var(--mono);font-size:12px;opacity:.75}
-.sw{width:10px;height:10px;border-radius:2px;display:inline-block;flex:none}
-.actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
-.toast{display:none;font-size:13px;color:var(--ok);align-self:center}
+/* sliders */
+.rows{display:flex;flex-direction:column}
+.row{display:grid;grid-template-columns:64px 1fr 72px;align-items:center;gap:12px;padding:5px 0}
+.row label{display:flex;align-items:center;gap:8px;font-weight:500;font-size:14px;cursor:help}
+.row.out label{color:var(--ink-3)}
+.row input[type=number]{width:100%;font-family:var(--mono);font-size:13px;padding:7px 8px;border:1px solid transparent;border-radius:8px;background:transparent;color:var(--ink);min-height:36px;text-align:right;-moz-appearance:textfield;appearance:textfield}
+.row input[type=number]::-webkit-outer-spin-button,.row input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}
+.row input[type=number]:hover,.row input[type=number]:focus{border-color:var(--line-2);background:var(--surface)}
+.tr{position:relative}
+.tr::before{content:"";position:absolute;top:50%;left:calc(11px + (100% - 22px) * .125);width:1px;height:14px;margin-top:-7px;background:var(--gold);opacity:.7;pointer-events:none}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:36px;background:transparent;margin:0;display:block;--c:var(--ink);--f:0%}
+input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--c) 0 var(--f),var(--track) var(--f))}
+input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:linear-gradient(to right,var(--c) 0 var(--f),var(--track) var(--f))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--c);border:4px solid var(--bg);margin-top:-9px;box-shadow:0 0 0 1px var(--line-2)}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;background:var(--c);border:4px solid var(--bg);box-shadow:0 0 0 1px var(--line-2)}
 
-.row{display:grid;grid-template-columns:52px 1fr 76px;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid var(--line)}
-.row:last-child{border-bottom:0}
-.row label{display:flex;align-items:center;gap:6px;font-weight:500;font-size:14px}
-.row input[type=number]{width:100%;font-family:var(--mono);font-size:14px;padding:8px 8px;border:1px solid var(--line-2);border-radius:8px;background:var(--card);color:var(--ink);min-height:40px;text-align:right}
-input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:36px;background:transparent;margin:0}
-input[type=range]::-webkit-slider-runnable-track{height:4px;border-radius:2px;background:var(--track)}
-input[type=range]::-moz-range-track{height:4px;border-radius:2px;background:var(--track)}
-input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--ink);border:3px solid var(--card);margin-top:-9px;box-shadow:0 0 0 1px var(--line-2)}
-input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--ink);border:3px solid var(--card);box-shadow:0 0 0 1px var(--line-2)}
-
-.tiles{display:grid;grid-template-columns:1fr;gap:10px;margin-bottom:14px}
-@media (min-width:560px){.tiles{grid-template-columns:repeat(3,1fr)}}
-.tile{padding:10px 12px;border-radius:10px;background:var(--bg)}
-.tile .l{font-size:12px;color:var(--ink-2);margin:0 0 2px;line-height:1.3}
-.tile .n{font-family:var(--serif);font-size:24px;font-weight:600;margin:0;line-height:1.1}
+/* plausibility */
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:22px}
+.tile{padding:14px 16px;border-radius:var(--r);background:var(--surface);border:1px solid var(--line)}
+.tile:first-child{grid-column:1/-1}
+@media (min-width:560px){.tiles{grid-template-columns:1.4fr 1fr 1fr}.tiles .tile:first-child{grid-column:auto}}
+.tile .l{font-size:12px;color:var(--ink-3);margin:0 0 4px;cursor:help}
+.tile .n{font-family:var(--serif);font-size:30px;font-weight:500;margin:0;line-height:1.05}
+.tile .sub{margin:6px 0 0;font-size:12px;color:var(--ink-3);line-height:1.35}
 .tile .n.v1{color:var(--ok)} .tile .n.v2{color:var(--ink)} .tile .n.v3{color:var(--accent)}
-.gauge{height:8px;border-radius:4px;background:var(--track);overflow:hidden;margin:8px 0 4px}
-.gauge div{height:100%;border-radius:4px;width:0;transition:width .3s ease}
+.gauge{height:6px;border-radius:3px;background:var(--track);overflow:hidden;margin:12px 0 0}
+.gauge div{height:100%;border-radius:3px;width:0;transition:width .3s ease}
 .gauge div.v1{background:var(--ok)} .gauge div.v2{background:var(--ink-2)} .gauge div.v3{background:var(--accent)}
-@media (prefers-reduced-motion:reduce){.gauge div{transition:none}}
-.gl{display:flex;justify-content:space-between;font-size:11px;color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase}
-.tile .sub{margin:6px 0 0;color:var(--ink-3)}
-.stack{display:flex;height:10px;border-radius:5px;overflow:hidden;background:var(--track);margin:0 0 12px}
-.drow{display:grid;grid-template-columns:14px 36px 1fr 46px 40px;align-items:center;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:13px}
-.drow:last-child{border-bottom:0}
-.drow .rg{font-family:var(--mono);font-size:12px;color:var(--ink-2)}
-.drow .z{text-align:right;font-family:var(--mono);font-size:12px}
-.drow .pp{text-align:right;color:var(--ink-2);font-size:12px}
-.bar{height:5px;border-radius:3px;background:var(--track);overflow:hidden;grid-column:3/6;margin-top:-2px}
-.bar div{height:100%;border-radius:3px}
-@media (min-width:560px){.drow{grid-template-columns:14px 40px 120px 46px 40px 1fr}.bar{grid-column:auto;margin-top:0}}
+.dev{display:flex;flex-direction:column;gap:2px}
+.drow{display:grid;grid-template-columns:64px 1fr 88px;align-items:center;gap:12px;height:26px}
+.drow .zv{font-family:var(--mono);font-size:12px;color:var(--ink-2);text-align:right;white-space:nowrap}
+.drow .zv.big{color:var(--accent)}
+.drow .nm{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;cursor:help}
+.drow .ax{position:relative;height:100%}
+.drow .ax::before{content:"";position:absolute;left:0;right:0;top:50%;height:2px;margin-top:-1px;background:var(--line-2);border-radius:1px}
+.drow .band{position:absolute;left:33.33%;right:33.33%;top:50%;height:10px;margin-top:-5px;background:var(--track);border-radius:5px}
+.drow .ax::after{content:"";position:absolute;left:50%;top:2px;bottom:2px;width:1px;background:var(--line-2);z-index:1}
+.drow .stem{position:absolute;top:50%;height:4px;margin-top:-2px;border-radius:2px;opacity:.85;transition:left .3s ease,width .3s ease;z-index:1}
+.drow .dot{position:absolute;top:50%;width:12px;height:12px;margin:-6px 0 0 -6px;border-radius:50%;border:2px solid var(--bg);box-shadow:0 0 0 1px var(--line-2);transition:left .3s ease;z-index:2;cursor:help}
+.drow .dot.big{width:14px;height:14px;margin:-7px 0 0 -7px;box-shadow:0 0 0 2px var(--accent)}
+.axl .ticks{position:relative;height:16px;display:block}
+.axl .ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.axl .ticks span.c{color:var(--ink-2)}
+.axl{display:grid;grid-template-columns:64px 1fr 88px;gap:12px;margin-top:4px}
+.axl div{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
 
-.tablewrap{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -14px;padding:0 14px}
-table{width:100%;border-collapse:collapse;font-size:13px;table-layout:fixed}
-th,td{padding:7px 4px;border-bottom:1px solid var(--line);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-th{font-weight:500;color:var(--ink-2);font-size:12px;line-height:1.2;white-space:normal;vertical-align:bottom}
-th:first-child,td:first-child{text-align:left}
-td.num{font-family:var(--mono)}
-td.up{color:var(--ok)} td.dn{color:var(--accent)}
-tr.meta td{color:var(--ink-2);border-bottom:0}
-tr.meta td:first-child{white-space:normal}
-tr.meta+tr.meta td{padding-top:0}
-@media (max-width:400px){table{font-size:12px}td.num{font-size:12px}}
-.src{font-size:12px;color:var(--ink-3);margin:10px 0 0}
+/* poll bars */
+.bars{display:flex;flex-direction:column;gap:6px}
+.brow{display:grid;grid-template-columns:64px 1fr 44px;align-items:center;gap:12px;height:22px}
+.brow .nm{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;cursor:help}
+.brow .bt{position:relative;height:10px;border-radius:5px;background:var(--track)}
+.brow .bt::after{content:"";position:absolute;left:20%;top:-3px;bottom:-3px;width:1px;background:var(--gold);opacity:.7}
+.brow .bt i{position:absolute;left:0;top:0;height:100%;border-radius:5px;cursor:help}
+.brow .vv{font-family:var(--mono);font-size:12px;text-align:right;color:var(--ink-2)}
+.src{font-size:12px;color:var(--ink-3);margin:14px 0 0}
 .src a{color:inherit}
-dl{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;margin:0;font-size:13px}
-dt{font-weight:600;display:flex;align-items:center;gap:6px}
-dd{margin:0;color:var(--ink-2)}
-footer{margin:32px 0 40px;font-size:12px;color:var(--ink-3);line-height:1.55}
-footer p{margin:0 0 8px}
+
+footer{font-size:12px;color:var(--ink-3);display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+footer span[data-tip]{cursor:help;border-bottom:1px dotted var(--line-2)}
+
+/* tooltip */
+#tip{position:fixed;z-index:50;max-width:280px;padding:8px 11px;border-radius:9px;background:var(--tip-bg);color:var(--tip-ink);font-size:13px;line-height:1.4;pointer-events:none;opacity:0;transform:translateY(3px);transition:opacity .12s,transform .12s;box-shadow:var(--shadow)}
+#tip.show{opacity:1;transform:none}
+#tip b{font-weight:600}
+[data-tip]{-webkit-tap-highlight-color:transparent}
 .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
 </style>
 </head>
 <body>
 
 <header class="top">
   <div class="wrap">
-    <p class="eyebrow">15. Saeimas vēlēšanas · 2026. gada 3. oktobris</p>
-    <h1>Mandātu kalkulators</h1>
-    <p class="lede">Pārbīdiet partiju atbalstu, salieciet koalīciju un pārbaudiet, cik ticams ir katrs iznākums salīdzinājumā ar kalibrēto prognozi.</p>
+    <div>
+      <p class="eyebrow">15. Saeima · 3. oktobris 2026</p>
+      <h1>Mandātu kalkulators</h1>
+    </div>
+    <span class="info" tabindex="0" data-tip="<b>Kā lietot.</b> Izvēlies scenāriju vai bīdi partiju atbalstu. Pieskaries partijām zem zāles, lai saliktu koalīciju. Zelta atzīme – 51 mandāts, vairākums.">i</span>
   </div>
 </header>
 
 <div class="sticky" aria-live="polite">
   <div class="wrap">
-    <div><span class="k">Koalīcija</span> <span class="v" id="st-coal">—</span><span class="k"> / 100</span></div>
-    <span class="pill none" id="st-maj">Izvēlieties partijas</span>
+    <span class="v"><span id="st-coal">—</span><small> / 100</small></span>
+    <div class="mini" aria-hidden="true"><i id="st-bar" style="width:0"></i><b data-tip="51 mandāti – vairākums"></b></div>
+    <span class="pill none" id="st-maj">Nav koalīcijas</span>
   </div>
 </div>
 
 <main class="wrap">
 
   <section aria-labelledby="h-scen">
-    <h2 id="h-scen">Scenāriji</h2>
-    <p class="hint">Pieci ticamākie iznākumi no simulācijas (iekavās – to varbūtība) un publicētā aptauja.</p>
+    <div class="sh"><h2 id="h-scen">Scenāriji</h2><span class="info" tabindex="0" data-tip="Pieci ticamākie simulācijas iznākumi (procentos – to varbūtība) un publicētā SKDS aptauja.">i</span></div>
+    <p class="cap">Izvēlies sākuma punktu. Procenti – cik ticams šāds iznākums.</p>
     <div class="chips" id="presets" role="group" aria-label="Scenāriju izvēle"></div>
   </section>
 
-  <section class="card hero" aria-labelledby="h-zale">
+  <section class="hero" aria-labelledby="h-zale">
     <h2 id="h-zale" class="sr-only">Saeimas zāle</h2>
-    <svg id="arc" viewBox="0 0 400 236" role="img" aria-label="Saeimas 100 mandātu sadalījums; koalīcija sēdināta kopā kreisajā pusē, ārējā loka aizpildījums rāda koalīcijas mandātus pret 51 vairākumu"></svg>
+    <svg id="arc" viewBox="0 0 412 236" role="img" aria-label="Saeimas 100 mandātu sadalījums"></svg>
     <div class="stats">
-      <div class="stat"><p class="l">Partijas Saeimā</p><p class="n" id="m-parties">—</p></div>
-      <div class="stat"><p class="l">Balsis zem 5 %</p><p class="n" id="m-waste">—</p></div>
-      <div class="stat"><p class="l">Koalīcijas mandāti</p><p class="n" id="m-coal">—</p></div>
-      <div class="stat"><p class="l">Vairākums (51)</p><p class="n none" id="m-maj">—</p></div>
+      <div class="stat"><p class="l" data-tip="Saraksti, kas pārvar 5 % barjeru">Partijas</p><p class="n" id="m-parties">7</p></div>
+      <div class="stat"><p class="l" data-tip="Balsis par sarakstiem zem 5 % – mandātus nesaņem">Zem 5 %</p><p class="n" id="m-waste">19 %</p></div>
+      <div class="stat"><p class="l" data-tip="Izvēlēto partiju mandāti kopā">Koalīcija</p><p class="n" id="m-coal">—</p></div>
+      <div class="stat"><p class="l" data-tip="Vairākums ir 51 mandāts. Cipars – rezerve vai iztrūkums.">Vairākums</p><p class="n none" id="m-maj">—</p></div>
     </div>
   </section>
 
   <section aria-labelledby="h-koal">
-    <h2 id="h-koal">Koalīcija</h2>
-    <p class="hint">Pieskarieties partijām, lai tās pievienotu koalīcijai. Koalīcijas partijas zālē sēž kopā.</p>
+    <div class="sh"><h2 id="h-koal">Koalīcija</h2><span class="info" tabindex="0" data-tip="Pieskaries partijai, lai to pievienotu vai izņemtu. Koalīcija zālē sēž kopā, pārējie – bāli.">i</span></div>
+    <p class="cap">Pieskaries partijām, lai saliktu koalīciju. Skaitlis – mandāti.</p>
     <div class="chips" id="chips"></div>
     <div class="actions">
-      <button type="button" id="clear">Notīrīt koalīciju</button>
-      <button type="button" id="copy">Kopēt scenāriju</button>
+      <button type="button" class="ghost" id="clear">Notīrīt</button>
+      <button type="button" class="ghost" id="copy" data-tip="Nokopē scenāriju ar saiti">Kopēt</button>
       <span class="toast" id="toast">Nokopēts</span>
     </div>
   </section>
 
-  <section class="card" aria-labelledby="h-balsis">
-    <h2 id="h-balsis">Partiju atbalsts, %</h2>
-    <p class="hint">Summa vienmēr ir 100 %: palielinot vienu partiju, pārējās proporcionāli samazinās. Saeimā iekļūst saraksti ar vismaz 5 %.</p>
-    <div id="sliders"></div>
+  <section aria-labelledby="h-balsis">
+    <div class="sh"><h2 id="h-balsis">Atbalsts, %</h2><span class="info" tabindex="0" data-tip="Summa vienmēr 100 %: ceļot vienu partiju, pārējās proporcionāli sarūk. Zelta atzīme – 5 % barjera.">i</span></div>
+    <p class="cap">Bīdi vai ieraksti. Summa vienmēr 100 %.</p>
+    <div class="rows" id="sliders"></div>
+    <div class="legend"><span><i class="tick"></i>5 % barjera – zem tās mandātu nav</span></div>
   </section>
 
-  <section class="card" aria-labelledby="h-tic">
-    <h2 id="h-tic">Ticamība</h2>
+  <section aria-labelledby="h-tic">
+    <div class="sh"><h2 id="h-tic">Ticamība</h2><span class="info" tabindex="0" data-tip="<b>Prognoze:</b> SKDS septembra (2035 resp.) un augusta (1205 resp.) aptaujas, svērtas pēc laika un izlases, plus daļa no pēdējā mēneša tendences; kļūdas diapazoni pēc 2022. gada profila. Katrai partijai savs kļūdas diapazons (σ).<br><br><b>Ticamība</b> – vājākais posms: partijai ar lielāko novirzi rēķināta varbūtība, ka reālais rezultāts atšķirsies vismaz tikpat.">i</span></div>
+    <p class="cap">Cik ticams ir šis scenārijs salīdzinājumā ar prognozi.</p>
     <div class="tiles">
-      <div class="tile"><p class="l">Līdzīga vēlēšanu iznākuma iespējamība</p><p class="n" id="m-pv">—</p>
-        <div class="gauge" aria-hidden="true"><div id="m-pvbar"></div></div>
-        <div class="gl"><span>zema</span><span>augsta</span></div>
-        <p class="l sub" id="m-pvsub"></p></div>
-      <div class="tile"><p class="l">Iespēja, ka 5 % barjeru pārvar tieši šīs partijas</p><p class="n" id="m-cfg">—</p></div>
-      <div class="tile"><p class="l">Partijas ārpus sava kļūdas diapazona (vairāk nekā 1σ)</p><p class="n" id="m-big">—</p><p class="l sub" id="m-bigsub"></p></div>
+      <div class="tile"><p class="l" data-tip="Cik bieži reālais rezultāts novirzās no prognozes vismaz tikpat, cik šis scenārijs">Iznākuma ticamība</p><p class="n v1" id="m-pv">100 %</p>
+        <div class="gauge" aria-hidden="true"><div id="m-pvbar" class="v1" style="width:100%"></div></div>
+        <p class="sub" id="m-pvsub">Visas partijas prognozes centrā.</p></div>
+      <div class="tile"><p class="l" data-tip="Varbūtība, ka 5 % pārvar tieši šis partiju kopums">Tieši šīs partijas Saeimā</p><p class="n" id="m-cfg">17 %</p><p class="sub">Varbūtība, ka 5 % pārvar tieši šīs</p></div>
+      <div class="tile"><p class="l" data-tip="Partijas ārpus sava kļūdas diapazona (vairāk nekā 1σ)">Ārpus diapazona</p><p class="n" id="m-big">0</p><p class="sub" id="m-bigsub">Visas savā diapazonā</p></div>
     </div>
-    <p class="hint">Kopējās novirzes sadalījums pa partijām</p>
-    <div class="stack" id="stack" aria-hidden="true"></div>
-    <div id="dev"></div>
+    <p class="cap"><b>Novirze no prognozes.</b> Punkts pa kreisi – mazāk nekā prognozēts, pa labi – vairāk.</p>
+    <div class="dev" id="dev"></div>
+    <div class="axl"><div></div><div class="ticks"><span style="left:0%">−3σ</span><span style="left:33.33%">−1σ</span><span class="c" style="left:50%">prognoze</span><span style="left:66.67%">+1σ</span><span style="left:100%">+3σ</span></div><div></div></div>
+    <div class="legend"><span><i></i>kļūdas diapazons ±1σ – parasta svārstība</span><span><i class="ring"></i>ārpus diapazona – maz ticama</span></div>
   </section>
 
-  <section class="card" aria-labelledby="h-apt">
-    <h2 id="h-apt">SKDS augusta aptauja</h2>
-    <p class="hint">Aptauja veikta 13.–19. augustā, 1205 respondenti. Pirmā aile – visi balsstiesīgie; otrā – tikai izlēmušie, ņemot vērā gatavību piedalīties (tos pašus skaitļus ielādē scenārijs «SKDS augusta aptauja»).</p>
-    <div class="tablewrap">
-      <table id="poll">
-        <colgroup><col style="width:34%"><col style="width:22%"><col style="width:22%"><col style="width:22%"></colgroup>
-        <thead><tr><th>Partija</th><th>Visi, %</th><th>pret jūliju</th><th>Izlēmušie, %</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-    <div class="actions">
-      <button type="button" id="loadpoll">Izmantot aptaujas skaitļus</button>
-    </div>
-    <p class="src">Avots: <a href="https://www.lsm.lv/raksts/zinas/latvija/27.08.2026-partiju-reitingi-augusta-aug-atbalsts-premjera-partijai-virs-2-pakapjas-stabilitatei-un-latvijas-attistibai.a660469/" target="_blank" rel="noopener">LSM.lv, 27.08.2026</a> (SKDS/LTV). Mazāko partiju daļa no visiem respondentiem rakstā nav publicēta.</p>
-  </section>
-
-  <section class="card" aria-labelledby="h-apz">
-    <h2 id="h-apz">Saīsinājumi</h2>
-    <dl id="gloss"></dl>
+  <section aria-labelledby="h-apt">
+    <div class="sh"><h2 id="h-apt">SKDS · septembris</h2><span class="info" tabindex="0" data-tip="4.–16. septembris, 2035 respondenti. LSM publicēja tikai daļu no visiem aptaujātajiem; izlēmušo vēlētāju daļa aprēķināta, sadalot partiju balsis bez nezinātājiem un nebalsotājiem. Tāpat kā rakstā – 5 % pārvar 7 partijas.">i</span><span class="sp"></span><button type="button" class="ghost" id="loadpoll">Ielādēt</button></div>
+    <p class="cap">Izlēmušo vēlētāju atbalsts, % (aprēķināts). Zem kursora – visi respondenti un izmaiņa pret augustu.</p>
+    <div class="bars" id="bars"></div>
+    <div class="legend"><span><i class="tick"></i>5 % barjera</span></div>
+    <p class="src">Avots: <a href="https://www.lsm.lv/raksts/zinas/latvija/25.09.2026-partiju-reitingi-septembri-saruk-atbalsts-progresivajiem-un-suverenajai-varaiapvienibai-jaunlatviesi-aug-zzs-popularitate-precizets.a664770/" target="_blank" rel="noopener">LSM.lv, 25.09.2026</a> · <a href="https://www.lsm.lv/raksts/zinas/latvija/27.08.2026-partiju-reitingi-augusta-aug-atbalsts-premjera-partijai-virs-2-pakapjas-stabilitatei-un-latvijas-attistibai.a660469/" target="_blank" rel="noopener">27.08.2026</a> (SKDS/LTV)</p>
   </section>
 
   <footer>
-    <p><strong>Metode.</strong> Mandāti sadalīti pēc Sent-Lagī metodes (100 mandāti, 5 % barjera) valsts mērogā; reālais sadalījums pa pieciem vēlēšanu apgabaliem var atšķirties par aptuveni ±2 mandātiem.</p>
-    <p><strong>Prognoze.</strong> Centrālā prognoze balstās uz SKDS 2026. gada augusta aptauju (13.–19. augusts, 1205 respondenti), koriģētu ar pēdējo mēnešu tendenci un 2022. gada aptauju kļūdu profilu. Katrai partijai ir savs kļūdas diapazons, kas apvieno izlases kļūdu, sistemātisko kļūdu un partijas reitinga svārstīgumu līdz vēlēšanām.</p>
-    <p><strong>Ticamība.</strong> «Līdzīga vēlēšanu iznākuma iespējamība» ir scenārija vājākais posms: partijai ar lielāko novirzi (σ vienībās – attiecībā pret tās paša kļūdas diapazonu) rēķināta varbūtība, ka reālais rezultāts no prognozes atšķirsies vismaz tikpat daudz. Prognozes centrā tā ir 100 %, zem 5 % – ļoti maz ticams. Apzināti netiek summētas visu partiju novirzes: šāds kopējais tests scenārijam, kurā lielākā daļa partiju atstāta tieši prognozē, uzrādītu augstu ticamību, jo reāls rezultāts nekad nesakrīt ar prognozi tik daudzās partijās vienlaikus. Otrā flīze rāda varbūtību, ka 5 % barjeru pārvar tieši izvēlētais partiju kopums; trešā – cik partiju atrodas ārpus sava kļūdas diapazona, jo vairākas vienlaicīgas lielas novirzes ir mazāk ticamas nekā viena. Josla zem sarakstiem rāda katras partijas daļu kopējā novirzē.</p>
+    <span data-tip="Mandāti sadalīti pēc Sent-Lagī metodes valsts mērogā. Reālais sadalījums pa pieciem apgabaliem var atšķirties par ±2 mandātiem.">Sent-Lagī</span>
+    <span>100 mandāti</span>
+    <span>5 % barjera</span>
   </footer>
 
 </main>
+<div id="tip" role="tooltip"></div>
 
 <script>
 (function(){
@@ -237,12 +273,13 @@ const P=[
  ["GS","Gobzema saraksts","#666666"]
 ];
 const presets=[
- {id:"central",label:"Centrālā prognoze · 6 partijas",p:"13 %",v:[23.6,18.5,14.3,12.9,5.9,5.9,4.3,3.0,4.1,2.3,1.9,1.3,1.0,1.0]},
- {id:"la",label:"7 partijas, LA iekļūst",p:"8 %",v:[23.2,17.8,14.0,12.4,7.1,7.2,6.2,2.3,2.9,2.0,1.8,1.3,1.0,1.0]},
- {id:"naout",label:"5 partijas, NA neiekļūst",p:"6 %",v:[24.8,19.2,15.1,13.3,7.3,3.6,3.4,2.5,3.3,2.2,2.0,1.3,1.0,1.0]},
- {id:"jvout",label:"5 partijas, JV neiekļūst",p:"6 %",v:[24.7,19.3,15.0,13.4,3.7,7.4,3.3,2.5,3.3,2.2,1.9,1.3,1.0,1.0]},
- {id:"st",label:"7 partijas, St! iekļūst",p:"6 %",v:[23.0,18.1,13.9,12.6,6.9,7.1,3.1,2.3,6.1,1.9,1.7,1.2,0.9,0.9]},
- {id:"poll",label:"SKDS augusta aptauja (13.–19.08.)",p:"",v:[23.6,17.1,14.1,12.2,7.0,6.7,4.1,3.8,3.3,2.5,2.1,1.3,1.0,1.0]}
+ {id:"central",label:"Prognoze",p:"17 %",tip:"<b>Centrālā prognoze.</b> 7 partijas Saeimā.",v:[21.5,13.9,8.9,14.0,6.4,8.5,3.6,7.5,4.3,3.9,2.7,2.1,0.8,1.9]},
+ {id:"st",label:"St! iekļūst",p:"9 %",tip:"<b>8 partijas.</b> Stabilitātei! pārvar 5 %.",v:[20.8,13.4,9.1,13.6,7.3,8.8,2.6,8.0,6.4,3.0,2.4,2.1,0.8,1.9]},
+ {id:"mmn",label:"MMN iekļūst",p:"6 %",tip:"<b>8 partijas.</b> Mēs mainām noteikumus pārvar 5 %.",v:[20.8,13.5,9.1,13.7,7.3,8.8,2.6,8.0,3.0,6.1,2.4,2.1,0.8,1.9]},
+ {id:"la",label:"LA iekļūst",p:"6 %",tip:"<b>8 partijas.</b> Latvijas attīstībai pārvar 5 %.",v:[20.6,13.4,9.0,13.6,7.3,8.7,6.3,7.9,3.0,3.0,2.4,2.1,0.8,1.9]},
+ {id:"jvout",label:"JV neiekļūst",p:"6 %",tip:"<b>6 partijas.</b> Jaunā Vienotība paliek zem 5 %.",v:[22.6,14.6,9.9,14.6,3.6,9.5,2.8,8.5,3.2,3.1,2.6,2.2,0.9,1.9]},
+ {id:"sep",label:"SKDS septembris",p:"",tip:"<b>Aptauja bez korekcijām.</b> 4.–16. septembris, izlēmušie vēlētāji (aprēķināts).",v:[21.7,14.2,9.3,13.9,6.5,8.4,3.6,7.2,4.2,3.8,2.7,2.0,0.8,1.8]},
+ {id:"aug",label:"SKDS augusts",p:"",tip:"<b>Aptauja bez korekcijām.</b> 13.–19. augusts, izlēmušie vēlētāji.",v:[23.6,17.1,14.1,12.2,7.0,6.7,4.1,3.8,3.3,2.5,2.1,1.3,1.0,1.0]}
 ];
 const MU=presets[0].v.slice();
 const SD=[3.8,3.0,2.9,2.4,2.4,2.8,2.3,2.5,2.1,1.9,1.7,0.6,0.6,0.6];
@@ -253,13 +290,29 @@ const $=id=>document.getElementById(id);
 const fmt=(x,d)=>x.toFixed(d===undefined?1:d).replace(".",",");
 const fmtP=p=>p<0.001?"<0,1 %":p<0.01?fmt(p*100,1)+" %":Math.round(p*100)+" %";
 function phi(z){const t=1/(1+0.2316419*Math.abs(z));const d=0.3989423*Math.exp(-z*z/2);const p=d*t*(0.3193815+t*(-0.3565638+t*(1.781478+t*(-1.821256+t*1.330274))));return z>0?1-p:p;}
-function chi2sf(x,k){const a=k/2;let s=1,t=1;for(let n=1;n<400;n++){t*=(x/2)/(a+n);s+=t;if(t<1e-14)break;}let g=Math.sqrt(Math.PI);for(let v=0.5;v<=a;v+=1)g*=v;const low=Math.exp(-x/2)*Math.pow(x/2,a)/g*s;return Math.min(1,Math.max(0,1-low));}
 function seatsSL(v){
  const s=new Array(N).fill(0);const el=[];for(let i=0;i<N;i++)if(v[i]>=5)el.push(i);
  if(!el.length)return s;
  for(let k=0;k<100;k++){let b=el[0],bv=-1;for(const i of el){const q=v[i]/(2*s[i]+1);if(q>bv){bv=q;b=i;}}s[b]++;}
  return s;
 }
+
+/* tooltip */
+const tip=$("tip");let tipEl=null;
+function showTip(el){
+ const t=el.getAttribute("data-tip");if(!t)return;tipEl=el;tip.innerHTML=t;tip.classList.add("show");
+ const r=el.getBoundingClientRect(),tw=tip.offsetWidth,th=tip.offsetHeight,vw=window.innerWidth,vh=window.innerHeight;
+ let x=r.left+r.width/2-tw/2;x=Math.max(8,Math.min(vw-tw-8,x));
+ let y=r.top-th-8;if(y<8)y=Math.min(vh-th-8,r.bottom+8);
+ tip.style.left=x+"px";tip.style.top=y+"px";
+}
+function hideTip(){tipEl=null;tip.classList.remove("show");}
+document.addEventListener("pointerover",e=>{const el=e.target.closest("[data-tip]");if(el&&e.pointerType!=="touch")showTip(el);else if(!el&&tipEl)hideTip();});
+document.addEventListener("pointerout",e=>{const el=e.target.closest("[data-tip]");if(el&&!el.contains(e.relatedTarget))hideTip();});
+document.addEventListener("focusin",e=>{const el=e.target.closest("[data-tip]");if(el)showTip(el);});
+document.addEventListener("focusout",hideTip);
+document.addEventListener("pointerdown",e=>{if(e.pointerType!=="touch")return;const el=e.target.closest("[data-tip]");if(el&&el!==tipEl){showTip(el);}else hideTip();},{passive:true});
+window.addEventListener("scroll",hideTip,{passive:true});
 
 /* state <-> URL hash */
 function readHash(){
@@ -270,13 +323,13 @@ function readHash(){
 }
 function writeHash(){
  const q="v="+votes.map(x=>fmt(x).replace(",",".")).join(",")+"&k="+[...coal].join(",");
- history.replaceState(null,"","#"+q);
+ try{history.replaceState(null,"","#"+q);}catch(e){}
 }
 
 /* presets */
 const pr=$("presets");
 presets.forEach(ps=>{
- const b=document.createElement("button");b.type="button";b.dataset.id=ps.id;
+ const b=document.createElement("button");b.type="button";b.className="chip";b.dataset.id=ps.id;b.setAttribute("data-tip",ps.tip);
  b.innerHTML=ps.label+(ps.p?`<span class="pct">${ps.p}</span>`:"");
  b.addEventListener("click",()=>{votes=ps.v.slice();normalize();activePreset=ps.id;syncInputs();render();});
  pr.appendChild(b);
@@ -291,46 +344,45 @@ function setVote(i,x){
  else{for(let j=0;j<N;j++)if(j!==i)votes[j]=target/(N-1);}
  votes[i]=x;
 }
-function syncInputs(except){P.forEach((p,i)=>{if(i!==except){$("s"+i).value=Math.min(40,votes[i]);$("n"+i).value=fmt(votes[i]).replace(",",".");}});}
+function fill(i){const s=$("s"+i);const v=Math.min(40,votes[i]);s.style.setProperty("--f",(11+(v/40)*(s.offsetWidth-22))/Math.max(1,s.offsetWidth)*100+"%");}
+function syncInputs(except){P.forEach((p,i)=>{if(i!==except){$("s"+i).value=Math.min(40,votes[i]);$("n"+i).value=fmt(votes[i]).replace(",",".");}fill(i);});}
 const sl=$("sliders");
 P.forEach((p,i)=>{
- const r=document.createElement("div");r.className="row";
- r.innerHTML=`<label for="s${i}"><span class="sw" style="background:${p[2]}"></span>${p[0]}</label>
- <input type="range" id="s${i}" min="0" max="40" step="0.1" value="${votes[i]}" aria-label="${p[1]}, procenti">
+ const r=document.createElement("div");r.className="row";r.id="row"+i;
+ r.innerHTML=`<label for="s${i}" data-tip="${p[1]}"><span class="sw" style="background:${p[2]}"></span>${p[0]}</label>
+ <div class="tr"><input type="range" id="s${i}" min="0" max="40" step="0.1" value="${votes[i]}" style="--c:${p[2]}" aria-label="${p[1]}, procenti"></div>
  <input type="number" id="n${i}" min="0" max="100" step="0.1" inputmode="decimal" value="${votes[i]}" aria-label="${p[1]}, precīza vērtība">`;
  sl.appendChild(r);
  $("s"+i).addEventListener("input",e=>{setVote(i,+e.target.value);activePreset="";syncInputs(i);$("n"+i).value=fmt(votes[i]).replace(",",".");render();});
- $("n"+i).addEventListener("input",e=>{const x=parseFloat(String(e.target.value).replace(",","."));if(isFinite(x)&&x>=0){setVote(i,x);activePreset="";syncInputs(i);$("s"+i).value=Math.min(40,votes[i]);render();}});
+ $("n"+i).addEventListener("input",e=>{const x=parseFloat(String(e.target.value).replace(",","."));if(isFinite(x)&&x>=0){setVote(i,x);activePreset="";syncInputs(i);$("s"+i).value=Math.min(40,votes[i]);fill(i);render();}});
  $("n"+i).addEventListener("blur",()=>{$("n"+i).value=fmt(votes[i]).replace(",",".");});
 });
+window.addEventListener("resize",()=>P.forEach((p,i)=>fill(i)));
 
-/* SKDS August poll: [raw % of all respondents, July raw %, decided-voter %] */
+/* SKDS September poll: [% of all respondents, August % of all, decided-voter % (derived)] */
 const POLL={
- "AS":[15.2,12.2,23.6],"SV/J":[11.8,11.4,17.1],"P":[8.8,9.0,14.1],"LPV":[8.5,10.0,12.2],
- "JV":[4.2,4.3,7.0],"NA":[4.5,5.5,6.7],"LA":[2.5,1.7,4.1],"ZZS":[2.8,2.9,3.8],"St!":[2.7,1.9,3.3],
- "MMN":[1.6,2.4,2.5],"SC":[null,null,2.1],"ASL":[null,null,1.3],"JKP":[null,null,1.0],"GS":[null,null,1.0]
+ "AS":[14.4,15.2,21.7],"SV/J":[9.4,11.8,14.2],"LPV":[9.2,8.5,13.9],"P":[6.2,8.8,9.3],
+ "NA":[5.6,4.5,8.4],"ZZS":[4.8,2.8,7.2],"JV":[4.3,4.2,6.5],"St!":[2.8,2.7,4.2],"MMN":[2.5,1.6,3.8],
+ "LA":[2.4,2.5,3.6],"SC":[1.8,null,2.7],"ASL":[1.3,null,2.0],"GS":[1.2,null,1.8],"JKP":[0.5,null,0.8]
 };
-const tb=document.querySelector("#poll tbody");
+const bars=$("bars");
 P.slice().sort((a,b)=>POLL[b[0]][2]-POLL[a[0]][2]).forEach(p=>{
  const [raw,jul,dec]=POLL[p[0]];
- let ch="–",cls="";
- if(raw!==null&&jul!==null){const d=raw-jul;cls=d>0.05?"up":d<-0.05?"dn":"";ch=(d>0?"+":d<0?"−":"±")+fmt(Math.abs(d));}
- tb.innerHTML+=`<tr><td><span class="sw" style="background:${p[2]};margin-right:6px;vertical-align:-1px"></span>${p[0]}</td><td class="num">${raw===null?"–":fmt(raw)}</td><td class="num ${cls}">${ch}</td><td class="num">${fmt(dec)}</td></tr>`;
+ let t=`<b>${p[1]}</b><br>Izlēmušie: ${fmt(dec)} % (aprēķināts)<br>Visi: ${fmt(raw)} %`;
+ if(jul!==null){const d=raw-jul;t+=` (${(d>0?"+":d<0?"−":"±")+fmt(Math.abs(d))} pret augustu)`;}
+ else t+=` (augustā nav publicēts)`;
+ bars.innerHTML+=`<div class="brow"><span class="nm" data-tip="${p[1]}"><span class="sw" style="background:${p[2]}"></span>${p[0]}</span><div class="bt"><i style="width:${Math.min(100,dec/25*100)}%;background:${p[2]};opacity:${dec>=5?1:.45}" data-tip="${t}"></i></div><span class="vv">${fmt(dec)}</span></div>`;
 });
-tb.innerHTML+=`<tr class="meta"><td>Nezina, par ko balsotu</td><td class="num">22,5</td><td></td><td></td></tr>
-<tr class="meta"><td>Nepiedalīsies vēlēšanās</td><td class="num">11,2</td><td></td><td></td></tr>`;
-$("loadpoll").addEventListener("click",()=>{const ps=presets.find(x=>x.id==="poll");votes=ps.v.slice();normalize();activePreset="poll";syncInputs();render();document.querySelector(".hero").scrollIntoView({behavior:"smooth",block:"start"});});
-
-/* glossary */
-const gl=$("gloss");
-P.forEach(p=>{gl.innerHTML+=`<dt><span class="sw" style="background:${p[2]}"></span>${p[0]}</dt><dd>${p[1]}</dd>`;});
+bars.innerHTML+=`<div class="brow"><span class="nm" style="color:var(--ink-3);cursor:default">Nezina</span><div class="bt"><i style="width:74.8%;background:var(--line-2)" data-tip="Nezina, par ko balsotu: ≈18,7 % no visiem (aprēķināts; augustā 22,5 %)"></i></div><span class="vv">≈18,7</span></div>
+<div class="brow"><span class="nm" style="color:var(--ink-3);cursor:default">Nebalsos</span><div class="bt"><i style="width:59.6%;background:var(--line-2)" data-tip="Nepiedalīsies vēlēšanās: 14,9 % no visiem (augustā 11,2 %)"></i></div><span class="vv">14,9</span></div>`;
+$("loadpoll").addEventListener("click",()=>{const ps=presets.find(x=>x.id==="sep");votes=ps.v.slice();normalize();activePreset="sep";syncInputs();render();document.querySelector(".hero").scrollIntoView({behavior:"smooth",block:"start"});});
 
 /* hemicycle geometry */
+const cx=206, cy=210, R=184;
 const rows=[[66,12],[90,16],[114,20],[138,24],[162,28]];
-const pos=[];rows.forEach(([r,n])=>{for(let k=0;k<n;k++){const a=Math.PI-(Math.PI*(k+0.5)/n);pos.push({x:206+r*Math.cos(a),y:210-r*Math.sin(a),a});}});
+const pos=[];rows.forEach(([r,n])=>{for(let k=0;k<n;k++){const a=Math.PI-(Math.PI*(k+0.5)/n);pos.push({x:cx+r*Math.cos(a),y:cy-r*Math.sin(a),a});}});
 pos.sort((a,b)=>b.a-a.a);
-const R=184, cx=206, cy=210;
-const tickA=Math.PI*(1-0.51), tx=cx+R*Math.cos(tickA), ty=cy-R*Math.sin(tickA);
+const tickA=Math.PI*(1-0.51);
 const svg=$("arc");
 
 function render(){
@@ -344,55 +396,53 @@ function render(){
  let h="",k=0;
  h+=`<path d="M ${cx-R} ${cy} A ${R} ${R} 0 0 1 ${cx+R} ${cy}" fill="none" stroke="var(--track)" stroke-width="6" pathLength="100"/>`;
  h+=`<path class="arcfill" d="M ${cx-R} ${cy} A ${R} ${R} 0 0 1 ${cx+R} ${cy}" fill="none" stroke="${cs>=51?"var(--ok)":"var(--accent)"}" stroke-width="6" pathLength="100" stroke-dasharray="${cs} 100"/>`;
- h+=`<line x1="${(cx+(R-7)*Math.cos(tickA)).toFixed(1)}" y1="${(cy-(R-7)*Math.sin(tickA)).toFixed(1)}" x2="${(cx+(R+8)*Math.cos(tickA)).toFixed(1)}" y2="${(cy-(R+8)*Math.sin(tickA)).toFixed(1)}" stroke="var(--brass)" stroke-width="2.5"/>`;
- h+=`<text x="${(cx+(R+20)*Math.cos(tickA)).toFixed(1)}" y="${(cy-(R+20)*Math.sin(tickA)+4).toFixed(1)}" text-anchor="middle" font-family="var(--mono)" font-size="12" font-weight="500" fill="var(--brass)">51</text>`;
+ h+=`<line x1="${(cx+(R-7)*Math.cos(tickA)).toFixed(1)}" y1="${(cy-(R-7)*Math.sin(tickA)).toFixed(1)}" x2="${(cx+(R+8)*Math.cos(tickA)).toFixed(1)}" y2="${(cy-(R+8)*Math.sin(tickA)).toFixed(1)}" stroke="var(--gold)" stroke-width="2.5"/>`;
+ h+=`<text x="${(cx+(R+20)*Math.cos(tickA)).toFixed(1)}" y="${(cy-(R+20)*Math.sin(tickA)+4).toFixed(1)}" text-anchor="middle" font-family="var(--mono)" font-size="12" font-weight="500" fill="var(--gold)">51</text>`;
  inC.concat(outC).forEach(i=>{for(let j=0;j<seats[i];j++){const q=pos[k++];const dim=any&&!coal.has(i);
-  h+=`<circle cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="8" fill="${P[i][2]}" opacity="${dim?0.22:1}"><title>${P[i][1]}: ${seats[i]}</title></circle>`;}});
- h+=`<text x="${cx}" y="${cy-6}" text-anchor="middle" font-family="var(--serif)" font-size="30" font-weight="600" fill="var(--ink)">${any?cs:100}</text>`;
- h+=`<text x="${cx}" y="${cy+12}" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-2)">${any?"koalīcijas mandāti":"mandāti"}</text>`;
+  h+=`<circle cx="${q.x.toFixed(1)}" cy="${q.y.toFixed(1)}" r="8" fill="${P[i][2]}" opacity="${dim?0.22:1}" data-tip="<b>${P[i][1]}</b><br>${seats[i]} mandāti · ${fmt(norm[i])} %"></circle>`;}});
+ h+=`<text x="${cx}" y="${cy-6}" text-anchor="middle" font-family="var(--serif)" font-size="34" font-weight="500" fill="var(--ink)">${any?cs:100}</text>`;
+ h+=`<text x="${cx}" y="${cy+12}" text-anchor="middle" font-family="var(--sans)" font-size="11" fill="var(--ink-3)">${any?"koalīcijā":"mandāti"}</text>`;
  svg.innerHTML=h;
 
  const inN=seats.filter(s=>s>0).length;
  const waste=norm.filter(v=>v<5).reduce((a,b)=>a+b,0);
  $("m-parties").textContent=inN;
  $("m-waste").textContent=Math.round(waste)+" %";
- $("m-coal").textContent=any?cs+" / 100":"—";
- const mj=$("m-maj"), sm=$("st-maj");
- mj.className="n";sm.className="pill";
- if(!any){mj.textContent="—";mj.classList.add("none");sm.textContent="Izvēlieties partijas";sm.classList.add("none");}
- else if(cs>=51){mj.textContent="Jā, +"+(cs-51);mj.classList.add("ok");sm.textContent="Vairākums, +"+(cs-51);sm.classList.add("ok");}
- else{mj.textContent="Nē, −"+(51-cs);mj.classList.add("no");sm.textContent="Trūkst "+(51-cs);sm.classList.add("no");}
+ $("m-coal").textContent=any?cs:"—";
+ const mj=$("m-maj"), sm=$("st-maj"), sb=$("st-bar");
+ mj.className="n";sm.className="pill";sb.className="";sb.style.width=cs+"%";
+ if(!any){mj.textContent="—";mj.classList.add("none");sm.textContent="Nav koalīcijas";sm.classList.add("none");}
+ else if(cs>=51){mj.textContent="+"+(cs-51);mj.classList.add("ok");sm.textContent="Vairākums +"+(cs-51);sm.classList.add("ok");sb.className="ok";}
+ else{mj.textContent="−"+(51-cs);mj.classList.add("no");sm.textContent="Trūkst "+(51-cs);sm.classList.add("no");}
  $("st-coal").textContent=any?cs:"—";
 
  const ch=$("chips");ch.innerHTML="";
  P.forEach((p,i)=>{const b=document.createElement("button");b.type="button";
   b.className="chip"+(coal.has(i)?" on":"")+(seats[i]?"":" out");
   b.setAttribute("aria-pressed",coal.has(i)?"true":"false");
+  b.setAttribute("data-tip",`<b>${p[1]}</b><br>${fmt(norm[i])} % · ${seats[i]?seats[i]+" mandāti":"zem 5 %"}`);
   b.innerHTML=`<span class="sw" style="background:${p[2]}"></span>${p[0]}<span class="s">${seats[i]}</span>`;
-  b.title=p[1];
-  b.addEventListener("click",()=>{coal.has(i)?coal.delete(i):coal.add(i);render();});ch.appendChild(b);});
+  b.addEventListener("click",()=>{coal.has(i)?coal.delete(i):coal.add(i);render();});ch.appendChild(b);
+  $("row"+i).classList.toggle("out",!seats[i]);});
 
  document.querySelectorAll("#presets button").forEach(b=>b.classList.toggle("sel",b.dataset.id===activePreset));
 
- let D=0,pc=1;const z=[];
- for(let i=0;i<N;i++){const zi=(norm[i]-MU[i])/SD[i];z.push(zi);D+=zi*zi;const pin=1-phi((5-MU[i])/SD[i]);pc*=norm[i]>=5?pin:(1-pin);}
+ let pc=1;const z=[];
+ for(let i=0;i<N;i++){const zi=(norm[i]-MU[i])/SD[i];z.push(zi);const pin=1-phi((5-MU[i])/SD[i]);pc*=norm[i]>=5?pin:(1-pin);}
  let bi=0;z.forEach((v,i)=>{if(Math.abs(v)>Math.abs(z[bi]))bi=i;});
  const zmax=Math.abs(z[bi]), pmin=2*(1-phi(zmax));
  const band=pmin>0.3?"v1":pmin>0.05?"v2":"v3";
  const pvEl=$("m-pv");pvEl.className="n "+band;pvEl.textContent=zmax<0.05?"100 %":fmtP(pmin);
+ pvEl.setAttribute("data-tip",zmax<0.05?"Visas partijas prognozes centrā":`Nosaka <b>${P[bi][0]}</b>: ${fmt(MU[bi])} → ${fmt(norm[bi])} %. Šāda vai lielāka novirze – ${fmtP(pmin)} gadījumu.`);
+ pvEl.style.cursor="help";
+ $("m-pvsub").textContent=zmax<0.05?"Visas partijas prognozes centrā.":`Nosaka ${P[bi][0]}: ${fmt(MU[bi])} → ${fmt(norm[bi])} %. Šāda novirze – ${fmtP(pmin)} gadījumu.`;
  const pb=$("m-pvbar");pb.className=band;pb.style.width=Math.max(1.5,(zmax<0.05?1:pmin)*100).toFixed(1)+"%";
- $("m-pvsub").textContent=zmax<0.05?"Visas partijas prognozes centrā.":`Nosaka ${P[bi][0]}: ${fmt(MU[bi])} → ${fmt(norm[bi])}. Šāda vai mazāka novirze – ${fmtP(pmin)} gadījumu.`;
  $("m-cfg").textContent=fmtP(pc);
  const outb=[];z.forEach((v,i)=>{if(Math.abs(v)>=1)outb.push(P[i][0]+" "+(v>0?"+":"−")+fmt(Math.abs(v))+"σ");});
- $("m-big").textContent=outb.length;
- $("m-bigsub").textContent=outb.length?outb.join(", "):"Visas partijas savā diapazonā.";
- const contrib=z.map(v=>D>1e-9?v*v/D*100:0);
- const st=$("stack");st.innerHTML="";
- if(D<1e-6){st.innerHTML=`<div style="width:100%;background:var(--line)"></div>`;}
- else contrib.forEach((c,i)=>{if(c>=0.5){st.innerHTML+=`<div style="width:${c}%;background:${P[i][2]}"></div>`;}});
+ const mb=$("m-big");mb.textContent=outb.length;$("m-bigsub").textContent=outb.length?outb.join(", "):"Visas savā diapazonā";
  const dv=$("dev");dv.innerHTML="";
- P.forEach((p,i)=>{const zi=z[i];const two=2*(1-phi(Math.abs(zi)));
-  dv.innerHTML+=`<div class="drow"><span class="sw" style="background:${p[2]}"></span><span>${p[0]}</span><span class="rg">${fmt(MU[i])} → ${fmt(norm[i])}</span><span class="z">${zi>=0?"+":"−"}${fmt(Math.abs(zi))}σ</span><span class="pp">${Math.round(two*100)} %</span><div class="bar"><div style="width:${Math.min(100,contrib[i]).toFixed(0)}%;background:${p[2]}"></div></div></div>`;});
+ P.forEach((p,i)=>{const zi=z[i];const two=2*(1-phi(Math.abs(zi)));const zc=Math.max(-3,Math.min(3,zi));
+  dv.innerHTML+=`<div class="drow"><span class="nm" data-tip="${p[1]}"><span class="sw" style="background:${p[2]}"></span>${p[0]}</span><div class="ax"><span class="band"></span><span class="stem" style="left:${Math.min(50,50+zc/6*100).toFixed(1)}%;width:${Math.abs(zc/6*100).toFixed(1)}%;background:${p[2]}"></span><span class="dot${Math.abs(zi)>=1?" big":""}" style="left:${(50+zc/6*100).toFixed(1)}%;background:${p[2]}" data-tip="<b>${p[1]}</b><br>${fmt(MU[i])} → ${fmt(norm[i])} % · ${zi>=0?"+":"−"}${fmt(Math.abs(zi))}σ<br>Šāda novirze – ${Math.round(two*100)} % gadījumu"></span></div><span class="zv${Math.abs(zi)>=1?" big":""}">${fmt(MU[i])} → ${fmt(norm[i])}</span></div>`;});
 
  writeHash();
 }
@@ -403,8 +453,8 @@ $("copy").addEventListener("click",()=>{
  const lines=P.map((p,i)=>`${p[0]} ${fmt(norm[i])} % → ${seats[i]} mand.`).join("\n");
  const c=[...coal].map(i=>P[i][0]).join(" + ")||"nav izvēlēta";
  const cs=[...coal].reduce((a,i)=>a+seats[i],0);
- const txt=`Saeima 2026 – scenārijs\n${lines}\nKoalīcija: ${c}${coal.size?` (${cs} mandāti)`:""}\nLīdzīga iznākuma iespējamība: ${$("m-pv").textContent} (${$("m-pvsub").textContent}) Tieši šīs partijas pārvar 5 %: ${$("m-cfg").textContent}. Ārpus kļūdas diapazona: ${$("m-bigsub").textContent}\n${location.href}`;
- const done=()=>{const t=$("toast");t.style.display="inline";setTimeout(()=>t.style.display="none",1800);};
+ const txt=`Saeima 2026 – scenārijs\n${lines}\nKoalīcija: ${c}${coal.size?` (${cs} mandāti)`:""}\nIznākuma ticamība: ${$("m-pv").textContent}. Tieši šīs partijas pārvar 5 %: ${$("m-cfg").textContent}. Ārpus diapazona: ${$("m-bigsub").textContent}\n${location.href}`;
+ const done=()=>{const t=$("toast");t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800);};
  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done,()=>window.prompt("Kopējiet tekstu:",txt));}
  else window.prompt("Kopējiet tekstu:",txt);
 });
