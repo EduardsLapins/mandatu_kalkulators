@@ -145,7 +145,7 @@ input[type=range]::-moz-range-thumb{width:14px;height:14px;border-radius:50%;bac
 .brow{display:grid;grid-template-columns:64px 1fr 44px;align-items:center;gap:12px;height:22px}
 .brow .nm{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:500;cursor:help}
 .brow .bt{position:relative;height:10px;border-radius:5px;background:var(--track)}
-.brow .bt::after{content:"";position:absolute;left:20%;top:-3px;bottom:-3px;width:1px;background:var(--gold);opacity:.7}
+.brow .bt::after{content:"";position:absolute;left:12.5%;top:-3px;bottom:-3px;width:1px;background:var(--gold);opacity:.7}
 .brow .bt i{position:absolute;left:0;top:0;height:100%;border-radius:5px;cursor:help}
 .brow .vv{font-family:var(--mono);font-size:12px;text-align:right;color:var(--ink-2)}
 .src{font-size:12px;color:var(--ink-3);margin:14px 0 0}
@@ -187,7 +187,7 @@ footer span[data-tip]{cursor:help;border-bottom:1px dotted var(--line-2)}
 
   <section aria-labelledby="h-scen">
     <div class="sh"><h2 id="h-scen">Scenāriji</h2><span class="info" tabindex="0" data-tip="Pieci ticamākie simulācijas iznākumi (procentos – to varbūtība) un publicētā SKDS aptauja.">i</span></div>
-    <p class="cap">Izvēlies sākuma punktu. Procenti – cik ticams šāds iznākums.</p>
+    <p class="cap">Izvēlies sākuma punktu. Procenti – cik ticams šāds iznākums pirms vēlēšanām.</p>
     <div class="chips" id="presets" role="group" aria-label="Scenāriju izvēle"></div>
   </section>
 
@@ -195,7 +195,7 @@ footer span[data-tip]{cursor:help;border-bottom:1px dotted var(--line-2)}
     <h2 id="h-zale" class="sr-only">Saeimas zāle</h2>
     <svg id="arc" viewBox="0 0 412 236" role="img" aria-label="Saeimas 100 mandātu sadalījums"></svg>
     <div class="stats">
-      <div class="stat"><p class="l" data-tip="Saraksti, kas pārvar 5 % barjeru">Partijas</p><p class="n" id="m-parties">7</p></div>
+      <div class="stat"><p class="l" data-tip="Saraksti, kas pārvar 5 % barjeru">Partijas</p><p class="n" id="m-parties">6</p></div>
       <div class="stat"><p class="l" data-tip="Balsis par sarakstiem zem 5 % – mandātus nesaņem">Zem 5 %</p><p class="n" id="m-waste">19 %</p></div>
       <div class="stat"><p class="l" data-tip="Izvēlēto partiju mandāti kopā">Koalīcija</p><p class="n" id="m-coal">—</p></div>
       <div class="stat"><p class="l" data-tip="Vairākums ir 51 mandāts. Cipars – rezerve vai iztrūkums.">Vairākums</p><p class="n none" id="m-maj">—</p></div>
@@ -237,11 +237,11 @@ footer span[data-tip]{cursor:help;border-bottom:1px dotted var(--line-2)}
   </section>
 
   <section aria-labelledby="h-apt">
-    <div class="sh"><h2 id="h-apt">SKDS · septembris</h2><span class="info" tabindex="0" data-tip="4.–16. septembris, 2035 respondenti. LSM publicēja tikai daļu no visiem aptaujātajiem; izlēmušo vēlētāju daļa aprēķināta, sadalot partiju balsis bez nezinātājiem un nebalsotājiem. Tāpat kā rakstā – 5 % pārvar 7 partijas.">i</span><span class="sp"></span><button type="button" class="ghost" id="loadpoll">Ielādēt</button></div>
-    <p class="cap">Izlēmušo vēlētāju atbalsts, % (aprēķināts). Zem kursora – visi respondenti un izmaiņa pret augustu.</p>
+    <div class="sh"><h2 id="h-apt">Exit poll · 3. oktobris</h2><span class="info" tabindex="0" data-tip="Vēlētāju aptauja pie iecirkņiem: ≈6500 nobalsojušie 70 iecirkņos (27 Rīgā). Veic LETA, RSU un LSM ar SKDS metodoloģisko atbalstu. 30 % aptaujāto izvēli neatklāja. Nav oficiālie rezultāti.">i</span><span class="sp"></span><button type="button" class="ghost" id="loadpoll">Ielādēt</button></div>
+    <p class="cap">Aptauja pie iecirkņiem, %. Zem kursora – salīdzinājums ar SKDS septembra aptauju.</p>
     <div class="bars" id="bars"></div>
     <div class="legend"><span><i class="tick"></i>5 % barjera</span></div>
-    <p class="src">Avots: <a href="https://www.lsm.lv/raksts/zinas/latvija/25.09.2026-partiju-reitingi-septembri-saruk-atbalsts-progresivajiem-un-suverenajai-varaiapvienibai-jaunlatviesi-aug-zzs-popularitate-precizets.a664770/" target="_blank" rel="noopener">LSM.lv, 25.09.2026</a> · <a href="https://www.lsm.lv/raksts/zinas/latvija/27.08.2026-partiju-reitingi-augusta-aug-atbalsts-premjera-partijai-virs-2-pakapjas-stabilitatei-un-latvijas-attistibai.a660469/" target="_blank" rel="noopener">27.08.2026</a> (SKDS/LTV)</p>
+    <p class="src">Avoti: <a href="https://www.lsm.lv/raksts/zinas/latvija/03.10.2026-veletaju-aptauja-5-barjeru-ieklusanai-15-saeima-varetu-but-parvarejusi-6-speki-lielakais-atbalsts-apvienotajam-sarakstam.a665232/" target="_blank" rel="noopener">LSM.lv, exit poll 03.10.2026</a> · SKDS: <a href="https://www.lsm.lv/raksts/zinas/latvija/25.09.2026-partiju-reitingi-septembri-saruk-atbalsts-progresivajiem-un-suverenajai-varaiapvienibai-jaunlatviesi-aug-zzs-popularitate-precizets.a664770/" target="_blank" rel="noopener">25.09.2026</a>, <a href="https://www.lsm.lv/raksts/zinas/latvija/27.08.2026-partiju-reitingi-augusta-aug-atbalsts-premjera-partijai-virs-2-pakapjas-stabilitatei-un-latvijas-attistibai.a660469/" target="_blank" rel="noopener">27.08.2026</a></p>
   </section>
 
   <footer>
@@ -273,6 +273,7 @@ const P=[
  ["GS","Gobzema saraksts","#666666"]
 ];
 const presets=[
+ {id:"exit",label:"Exit poll",p:"",tip:"<b>Aptauja pie iecirkņiem, 3. oktobris.</b> ≈6500 vēlētāji, 70 iecirkņi. LETA, RSU, LSM / SKDS.",v:[35.6,10.8,11.1,11.3,6.7,8.7,3.1,3.7,1.7,3.0,0.6,1.3,0.2,0.9]},
  {id:"central",label:"Prognoze",p:"17 %",tip:"<b>Centrālā prognoze.</b> 7 partijas Saeimā.",v:[21.5,13.9,8.9,14.0,6.4,8.5,3.6,7.5,4.3,3.9,2.7,2.1,0.8,1.9]},
  {id:"st",label:"St! iekļūst",p:"9 %",tip:"<b>8 partijas.</b> Stabilitātei! pārvar 5 %.",v:[20.8,13.4,9.1,13.6,7.3,8.8,2.6,8.0,6.4,3.0,2.4,2.1,0.8,1.9]},
  {id:"mmn",label:"MMN iekļūst",p:"6 %",tip:"<b>8 partijas.</b> Mēs mainām noteikumus pārvar 5 %.",v:[20.8,13.5,9.1,13.7,7.3,8.8,2.6,8.0,3.0,6.1,2.4,2.1,0.8,1.9]},
@@ -281,10 +282,10 @@ const presets=[
  {id:"sep",label:"SKDS septembris",p:"",tip:"<b>Aptauja bez korekcijām.</b> 4.–16. septembris, izlēmušie vēlētāji (aprēķināts).",v:[21.7,14.2,9.3,13.9,6.5,8.4,3.6,7.2,4.2,3.8,2.7,2.0,0.8,1.8]},
  {id:"aug",label:"SKDS augusts",p:"",tip:"<b>Aptauja bez korekcijām.</b> 13.–19. augusts, izlēmušie vēlētāji.",v:[23.6,17.1,14.1,12.2,7.0,6.7,4.1,3.8,3.3,2.5,2.1,1.3,1.0,1.0]}
 ];
-const MU=presets[0].v.slice();
+const MU=presets.find(x=>x.id==="central").v.slice();
 const SD=[3.8,3.0,2.9,2.4,2.4,2.8,2.3,2.5,2.1,1.9,1.7,0.6,0.6,0.6];
 const N=P.length;
-let votes=presets[0].v.slice(), coal=new Set(), activePreset="central";
+let votes=presets[0].v.slice(), coal=new Set(), activePreset="exit";
 
 const $=id=>document.getElementById(id);
 const fmt=(x,d)=>x.toFixed(d===undefined?1:d).replace(".",",");
@@ -359,23 +360,19 @@ P.forEach((p,i)=>{
 });
 window.addEventListener("resize",()=>P.forEach((p,i)=>fill(i)));
 
-/* SKDS September poll: [% of all respondents, August % of all, decided-voter % (derived)] */
+/* Exit poll 3 Oct: [exit poll %, SKDS Sept decided % (derived)] */
 const POLL={
- "AS":[14.4,15.2,21.7],"SV/J":[9.4,11.8,14.2],"LPV":[9.2,8.5,13.9],"P":[6.2,8.8,9.3],
- "NA":[5.6,4.5,8.4],"ZZS":[4.8,2.8,7.2],"JV":[4.3,4.2,6.5],"St!":[2.8,2.7,4.2],"MMN":[2.5,1.6,3.8],
- "LA":[2.4,2.5,3.6],"SC":[1.8,null,2.7],"ASL":[1.3,null,2.0],"GS":[1.2,null,1.8],"JKP":[0.5,null,0.8]
+ "AS":[35.6,21.7],"LPV":[11.3,13.9],"P":[11.1,9.3],"SV/J":[10.8,14.2],"NA":[8.7,8.4],"JV":[6.7,6.5],
+ "ZZS":[3.7,7.2],"LA":[3.1,3.6],"MMN":[3.0,3.8],"St!":[1.7,4.2],"ASL":[1.3,2.0],"GS":[0.9,1.8],"SC":[0.6,2.7],"JKP":[0.2,0.8]
 };
 const bars=$("bars");
-P.slice().sort((a,b)=>POLL[b[0]][2]-POLL[a[0]][2]).forEach(p=>{
- const [raw,jul,dec]=POLL[p[0]];
- let t=`<b>${p[1]}</b><br>Izlēmušie: ${fmt(dec)} % (aprēķināts)<br>Visi: ${fmt(raw)} %`;
- if(jul!==null){const d=raw-jul;t+=` (${(d>0?"+":d<0?"−":"±")+fmt(Math.abs(d))} pret augustu)`;}
- else t+=` (augustā nav publicēts)`;
- bars.innerHTML+=`<div class="brow"><span class="nm" data-tip="${p[1]}"><span class="sw" style="background:${p[2]}"></span>${p[0]}</span><div class="bt"><i style="width:${Math.min(100,dec/25*100)}%;background:${p[2]};opacity:${dec>=5?1:.45}" data-tip="${t}"></i></div><span class="vv">${fmt(dec)}</span></div>`;
+P.slice().sort((a,b)=>POLL[b[0]][0]-POLL[a[0]][0]).forEach(p=>{
+ const [ex,sep]=POLL[p[0]];const d=ex-sep;
+ const t=`<b>${p[1]}</b><br>Exit poll: ${fmt(ex)} %<br>SKDS septembrī: ${fmt(sep)} % (${(d>0?"+":d<0?"−":"±")+fmt(Math.abs(d))})`;
+ bars.innerHTML+=`<div class="brow"><span class="nm" data-tip="${p[1]}"><span class="sw" style="background:${p[2]}"></span>${p[0]}</span><div class="bt"><i style="width:${Math.min(100,ex/40*100)}%;background:${p[2]};opacity:${ex>=5?1:.45}" data-tip="${t}"></i></div><span class="vv">${fmt(ex)}</span></div>`;
 });
-bars.innerHTML+=`<div class="brow"><span class="nm" style="color:var(--ink-3);cursor:default">Nezina</span><div class="bt"><i style="width:74.8%;background:var(--line-2)" data-tip="Nezina, par ko balsotu: ≈18,7 % no visiem (aprēķināts; augustā 22,5 %)"></i></div><span class="vv">≈18,7</span></div>
-<div class="brow"><span class="nm" style="color:var(--ink-3);cursor:default">Nebalsos</span><div class="bt"><i style="width:59.6%;background:var(--line-2)" data-tip="Nepiedalīsies vēlēšanās: 14,9 % no visiem (augustā 11,2 %)"></i></div><span class="vv">14,9</span></div>`;
-$("loadpoll").addEventListener("click",()=>{const ps=presets.find(x=>x.id==="sep");votes=ps.v.slice();normalize();activePreset="sep";syncInputs();render();document.querySelector(".hero").scrollIntoView({behavior:"smooth",block:"start"});});
+bars.innerHTML+=`<div class="brow"><span class="nm" style="color:var(--ink-3);cursor:default">Neatklāja</span><div class="bt"><i style="width:75%;background:var(--line-2)" data-tip="≈30 % aptaujāto savu izvēli neatklāja (daļa no visiem aptaujātajiem; partiju procenti – no atbildējušajiem)"></i></div><span class="vv">≈30</span></div>`;
+$("loadpoll").addEventListener("click",()=>{const ps=presets.find(x=>x.id==="exit");votes=ps.v.slice();normalize();activePreset="exit";syncInputs();render();document.querySelector(".hero").scrollIntoView({behavior:"smooth",block:"start"});});
 
 /* hemicycle geometry */
 const cx=206, cy=210, R=184;
